@@ -25,27 +25,22 @@ public class ThreeStateCheckbox extends View {
      * Paint object to draw
      */
     private Paint mPaint;
-
     /**
      * Current state of checkbox
      */
     private State mState;
-
     /**
      * Bitmap resource for unchecked image
      */
     private Bitmap uncheckedBitmap;
-
     /**
      * Bitmap resource for partially checked image
      */
     private Bitmap partialBitmap;
-
     /**
      * Bitmap resource for checked image
      */
     private Bitmap checkedBitmap;
-
     /**
      * Click listener
      */
@@ -105,6 +100,17 @@ public class ThreeStateCheckbox extends View {
         return mState;
     }
 
+    /**
+     * Set state of the checkbox
+     *
+     * @param state to be set
+     */
+    public void setState(State state) {
+        this.mState = state;
+        invalidate();
+        requestLayout();
+    }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
@@ -113,9 +119,9 @@ public class ThreeStateCheckbox extends View {
             boolean touchEventResult = super.onTouchEvent(event);
 
             if (this.mState == State.UNCHECKED) {
-                this.mState = State.PARTIAL;
-            } else if (this.mState == State.PARTIAL) {
                 this.mState = State.CHECKED;
+            } else if (this.mState == State.PARTIAL) {
+                this.mState = State.UNCHECKED;
             } else if (mState == State.CHECKED) {
                 this.mState = State.UNCHECKED;
             }
@@ -129,6 +135,13 @@ public class ThreeStateCheckbox extends View {
         }
 
         return false;
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec,
+                             int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        setMeasuredDimension(uncheckedBitmap.getWidth(), uncheckedBitmap.getHeight());
     }
 
     @Override
