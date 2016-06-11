@@ -12,11 +12,11 @@ import android.view.View;
 
 /**
  * <h1>Three State Checkbox</h1>
- *
+ * <p/>
  * Conventionally, Checkboxes are two mState widgets where checked mState means true and unchecked
  * mState means false. ThreeStateCheckbox is extension of Checkbox. It have an additional mState i.e.
  * partial checked.
- *
+ * <p/>
  * Created by kuldeep on 11/06/16.
  */
 public class ThreeStateCheckbox extends View {
@@ -110,19 +110,19 @@ public class ThreeStateCheckbox extends View {
 
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
 
-            boolean touchEventResult =  super.onTouchEvent(event);
+            boolean touchEventResult = super.onTouchEvent(event);
 
-            if(this.mState == State.UNCHECKED) {
+            if (this.mState == State.UNCHECKED) {
                 this.mState = State.PARTIAL;
             } else if (this.mState == State.PARTIAL) {
                 this.mState = State.CHECKED;
-            } else if(mState == State.CHECKED){
+            } else if (mState == State.CHECKED) {
                 this.mState = State.UNCHECKED;
             }
 
             invalidate();
             requestLayout();
-            if (this.onClickListener != null){
+            if (this.onClickListener != null) {
                 this.onClickListener.onClick(this);
             }
             return touchEventResult;

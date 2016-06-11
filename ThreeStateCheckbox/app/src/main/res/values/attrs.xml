@@ -2,9 +2,9 @@
 <resources>
     <declare-styleable name="ThreeStateCheckbox">
         <attr name="state" format="enum">
-            <enum name="unchecked" value="0"/>
-            <enum name="partial" value="1"/>
-            <enum name="checked" value="2"/>
+            <enum name="unchecked" value="0" />
+            <enum name="partial" value="1" />
+            <enum name="checked" value="2" />
         </attr>
     </declare-styleable>
 </resources>
