@@ -12,13 +12,11 @@ public class Main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.threeStateCheckbox).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ThreeStateCheckbox.State state = ((ThreeStateCheckbox) v).getState();
-                Log.i("Main ", state.toString());
-            }
-        });
+
+
+        CustomTextView customTextView= (CustomTextView) findViewById(R.id.customTextView);
+
+           customTextView.setTextView("djkhfsgkdshbfhs sdhfbjkhsdhjfhs jlkadflkjsdahgj jasdhlfkjshdiugh jksdaflkjghsdjgh jhhggfhjfghfygfghfhgfhjgfhgfgfhgfhgf bvmhghjvghjfjhgfgfghfhg jghvjghfjghfghjfghfg jhkgkhjkhjghjghkjgjhgkhj");
 
     }
 }
