@@ -1,0 +1,66 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+
+
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'Test'
+
+    publishedGroupId = 'com.palup.widgets'
+    libraryName = 'FaceCrop'
+    artifact = 'facecropmodule'
+
+    libraryDescription = 'Face Crop'
+
+    siteUrl = 'https://github.com/kuldeepiitg/Android'
+    gitUrl = 'https://github.com/kuldeepiitg/Android'
+
+    libraryVersion = '1.0.1'
+
+    developerId = 'nitin'
+    developerName = 'nitin jaiman'
+    developerEmail = 'nitin.jaiman2000@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+
+    }
+}
+
+
+
+
+
+
+dependencies {
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.google.android.gms:play-services:9.0.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+}
+
+
+
+
+
